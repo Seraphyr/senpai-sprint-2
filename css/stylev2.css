@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --Red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+    --Light-violet: hsl(290, 36%, 46%);
+}
+
+* {
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.hidden {
+    display: none !important;
+} 
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.left_section {
+    min-height: 100vh;
+    width: 40%;
+    background-image: url("../images/bg-main-desktop.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.cards {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.card-front {
+    position: relative;
+    right: 100px;
+}
+
+.card-front__logo {
+    position: absolute;
+    top: 1rem;
+    left: 1.4rem;
+}
+
+#card-front__number {
+    position: absolute;
+    color: var(--White);
+    bottom: 5rem;
+    left: 1.4rem;
+    letter-spacing: 2px;
+    font-size: 1.7rem;
+    font-weight: 100;
+}
+
+.card-front__name {
+    position: absolute;
+    bottom: 2rem;
+    left: 1.4rem;
+    right: 3rem;
+    font-size: 1rem;
+    color: var(--White);
+    text-transform: uppercase;
+}
+
+.card-front__date {
+    position: absolute;
+    bottom: 2rem;
+    left: 22rem;
+    right: 3rem;
+    font-size: 1rem;
+    color: var(--White);
+    text-transform: uppercase;
+}
+
+.card-back {
+    position: relative;
+}
+
+#cvc {
+    position: absolute;
+    right: 3.5rem;
+    top: 6.8rem;
+    color: var(--Light-grayish-violet);
+}
+
+.right_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.right_section form {
+    display: grid;
+    gap: 1rem;
+    width: 350px;
+    /* Ariel: Modificado grid-template-columns de repeat(2, 1fr) a 1fr NOTED*/
+    grid-template-columns: 1fr;
+    /* Ariel: Modificado un alto fijo para cada una de las filas utilizando la propiedad grid-template-rows NOTED*/
+    grid-template-rows: 70px 70px 70px 70px;
+}
+
+label {
+    color: var(--Very-dark-violet);
+    margin-bottom: .3rem;
+    text-transform: uppercase;
+    font-size: 18px
+}
+
+.form__threeinputs {
+    display: inline;
+}
+
+input {
+    padding: .5rem;
+    font-size: 18px;
+    border: 1px solid var(--Light-grayish-violet);
+    border-radius: 6px;
+    cursor: pointer;
+    /* Ariel: Agregado width: 100%, para ocupar todo el ancho del grid NOTED*/
+    width: 100%;
+}
+
+.card_information {
+    display: flex;
+    /* grid-column: 2 span;
+    gap: 1rem; */
+}
+
+form button {
+    /* grid-column: 2 span; */
+    font-size: 18px;
+    height: 50px;
+    color: var(--White);
+    border-radius: 6px;
+    background: var(--Very-dark-violet);
+    cursor: pointer;
+}
+
+input:focus {
+    /*averiguar porque queda sin borde cuando se selecciona en vez de rojo*/
+    /* Ariel: Respondiendo la línea de arriba, faltaba agregar el tipo de línea. Solid para que sea una línea continua NOTED */
+    border: 1px solid var(--Red);
+    outline: none;
+}
+
+#form__btn-confirm:hover {
+    background-color: var(--Light-violet);
+    outline: none;
+}
+
+/* Ariel: Opción utilizando grids */
+.card_information {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+.completed {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.completed h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.completed p {
+    font-size: 18px;
+    color: var(--Dark-grayish-violet);
+}
+
+.completed button {
+    color: var(--White);
+    width: 100%;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 18px;
+    background-color: var(--Very-dark-violet);
+    cursor: pointer;
+}
