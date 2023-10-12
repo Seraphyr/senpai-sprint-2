@@ -15,21 +15,26 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 .hidden {
     display: none !important;
-} 
+}
+
 .container {
     display: flex;
     align-items: center;
+}
+body{
+    background-image: url("../images/bg-main-desktop.png");
+    background-repeat: no-repeat;
 }
 
 .left_section {
     min-height: 100vh;
     width: 40%;
-    background-image: url("../images/bg-main-desktop.png");
-    background-position: center center;
+    
     background-size: cover;
-    background-repeat: no-repeat;
+   
     position: relative;
 }
 
@@ -106,9 +111,7 @@
     display: grid;
     gap: 1rem;
     width: 350px;
-    /* Ariel: Modificado grid-template-columns de repeat(2, 1fr) a 1fr NOTED*/
     grid-template-columns: 1fr;
-    /* Ariel: Modificado un alto fijo para cada una de las filas utilizando la propiedad grid-template-rows NOTED*/
     grid-template-rows: 70px 70px 70px 70px;
 }
 
@@ -129,18 +132,14 @@ input {
     border: 1px solid var(--Light-grayish-violet);
     border-radius: 6px;
     cursor: pointer;
-    /* Ariel: Agregado width: 100%, para ocupar todo el ancho del grid NOTED*/
     width: 100%;
 }
 
 .card_information {
     display: flex;
-    /* grid-column: 2 span;
-    gap: 1rem; */
 }
 
 form button {
-    /* grid-column: 2 span; */
     font-size: 18px;
     height: 50px;
     color: var(--White);
@@ -150,8 +149,6 @@ form button {
 }
 
 input:focus {
-    /*averiguar porque queda sin borde cuando se selecciona en vez de rojo*/
-    /* Ariel: Respondiendo la línea de arriba, faltaba agregar el tipo de línea. Solid para que sea una línea continua NOTED */
     border: 1px solid var(--Red);
     outline: none;
 }
@@ -161,7 +158,6 @@ input:focus {
     outline: none;
 }
 
-/* Ariel: Opción utilizando grids */
 .card_information {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -172,6 +168,7 @@ input:focus {
 .span-2 {
     grid-column: span 2;
 }
+
 .completed {
     width: 350px;
     display: flex;
@@ -200,3 +197,51 @@ input:focus {
     background-color: var(--Very-dark-violet);
     cursor: pointer;
 }
+
+
+@media (max-width:375px) {
+
+    .container {
+        flex-direction: column;
+        width: 375px;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-image: url("../images/bg-main-mobile.png");
+        background-repeat: no-repeat;
+        max-height: 250px;
+        width: 375px;
+        background-size: cover;
+        position: relative;
+    }
+    .left_section {
+        position: absolute;
+    }
+
+
+    .card-back {
+        transform: scale(0.5);
+        z-index: 0;
+        top: -450px;
+    
+    }
+
+    .card-front {
+        z-index: 1;
+        left: -20px;
+        top: -100px;
+        transform: scale(0.5);
+    }
+
+    form{
+        margin-top: 20rem;
+        margin-left: 8rem;
+        max-width: 38rem;
+    }
+    .right_section{
+        width: 375px;
+
+    }
+}
+ 
