@@ -16,15 +16,13 @@
     box-sizing: border-box;
 }
 
-.hidden {
-    display: none !important;
-}
 
 .container {
     display: flex;
     align-items: center;
 }
-body{
+
+body {
     background-image: url("../images/bg-main-desktop.png");
     background-repeat: no-repeat;
 }
@@ -66,7 +64,7 @@ body{
     font-weight: 100;
 }
 
-.card-front__name {
+#card-front__name {
     position: absolute;
     bottom: 2rem;
     left: 1.4rem;
@@ -76,11 +74,10 @@ body{
     text-transform: uppercase;
 }
 
-.card-front__date {
+#card-front__date {
     position: absolute;
     bottom: 2rem;
     left: 22rem;
-    right: 3rem;
     font-size: 1rem;
     color: var(--White);
     text-transform: uppercase;
@@ -104,7 +101,7 @@ body{
     width: 100%;
 }
 
-.right_section form {
+.right_section_form {
     display: grid;
     gap: 1rem;
     width: 350px;
@@ -132,9 +129,9 @@ input {
     width: 100%;
 }
 
-.card_information {
+/* .card_information {
     display: flex;
-}
+} */
 
 form button {
     font-size: 18px;
@@ -143,6 +140,7 @@ form button {
     border-radius: 6px;
     background: var(--Very-dark-violet);
     cursor: pointer;
+    margin-top: 30px;
 }
 
 input:focus {
@@ -195,6 +193,15 @@ input:focus {
     cursor: pointer;
 }
 
+.hidden {
+    display: none;
+}
+
+.errors {
+    color: var(--Red);
+    font-size: 0.7rem;
+    display: block;
+}
 
 @media (max-width:375px) {
 
@@ -206,15 +213,15 @@ input:focus {
         justify-content: center;
     }
 
-    body{
+    body {
         background-image: url("../images/bg-main-mobile.png");
         background-repeat: no-repeat;
-        max-height: 250px; 
-        width: 100vw; 
+        max-height: 250px;
+        width: 100vw;
         background-size: cover;
         position: relative;
     }
-   
+
     .left_section {
         min-height: 100px;
     }
@@ -232,7 +239,7 @@ input:focus {
         top: 90px;
     }
 
-    .right_section{
+    .right_section {
         width: 300px;
         min-height: 100px;
         min-height: 200px;
@@ -241,8 +248,8 @@ input:focus {
     #form__btn-confirm {
         margin-top: 20px;
     }
-    form{
+
+    form {
         margin-bottom: 10px;
     }
 }
- 
