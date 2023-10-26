@@ -54,9 +54,12 @@ iCard_cvc.oninput = function cvcFrontCardChange(event) {
 //BUTTONS
 const bConfirm = document.querySelector('#form__btn-confirm');
 const bContinue = document.querySelector('#form__btn-continue');
+
+//SECTIONS
 const cardForm = document.querySelector('#form');       //formulario 
 const formThankYou = document.querySelector('#form__thankYou');    //mensaje de gracias
 
+//BUTTONS FUNCTIONS
 bConfirm.onclick = function (event) { //funcion que comprueba los datos introducidos al dar click al boton Confirm en el form
     event.preventDefault();
     const errorCardName = []; //array vacio creado para guardar los posibles errores
@@ -143,7 +146,7 @@ bContinue.onclick = function () {
     formThankYou.classList.add('hidden'); //oculta mensaje de gracias
     cardForm.classList.remove('hidden');  //vuelve a mostrar el formulario cuando se usa el boton continue del mensaje de gracias
 
-    iCard_name.value = ""; //limpia el input
+    /* iCard_name.value = ""; //limpia el input
     card_name_value.innerHTML = "Jane Appleseed"; //cambia el valor del nombre de la tarjeta (en imagen) al inicial
     iCard_number.value = "";
     card_number_value.innerHTML = "0000 0000 0000 0000";
@@ -152,6 +155,11 @@ bContinue.onclick = function () {
     iCard_year.value = "";
     card_year_value.innerHTML = "00";
     iCard_cvc.value = "";
-    card_cvc_value.innerHTML = "000";
+    card_cvc_value.innerHTML = "000"; */
+    cleanPage();
 }
 
+function cleanPage() {
+    location.reload();
+    cardForm.reset();
+}
